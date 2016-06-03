@@ -1,13 +1,13 @@
 # gaelcode
 C as Gaeilge
 
-Example:
+Mar shampla:
 
 ```c
 #iniaigh<gnáth-ionchur-aschur.h>
 
 príomh()
 {
-        cuir_i_gcló("Conas atá tú?");
+        cuir_i_gcló("Conas atá tú, an domhain?");
 }
 ```

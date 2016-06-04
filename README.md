@@ -1,4 +1,4 @@
-# gaelcode
+# gaelcód
 C as Gaeilge
 
 Mar shampla:
@@ -11,3 +11,11 @@ príomh()
         cuir_i_gcló("Conas atá tú, an domhain?");
 }
 ```
+
+## Úsáid:
+
+```bash
+$ ./gaelcc -i diaduit.c -o diaduit
+$ ./diaduit
+```
+

@@ -1,0 +1,49 @@
+#!/usr/bin/python3
+
+import getopt, os, re, sys
+
+def main(argv):
+    inputfile = ''
+    outputfile = ''
+    try:
+       opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+    except getopt.GetoptError:
+       print('translate.py -i <inputfile> -o <outputfile>')
+       sys.exit(2)
+    for opt, arg in opts:
+       if opt == '-h':
+          print('translate.py -i <inputfile> -o <outputfile>')
+          sys.exit()
+       elif opt in ("-i", "--ifile"):
+          inputfile = arg
+       elif opt in ("-o", "--ofile"):
+          outputfile = arg
+
+    with open(inputfile, 'r') as inputfile:
+        script = inputfile.read()
+
+    ga_to_en = dict({
+        'cuir_i_gcló': 'printf',
+        'príomh': 'main',
+        'iniaigh': 'include',
+        'gnáth-ionchur-aschur.h': 'stdio.h'
+    })
+
+    for i in ga_to_en:
+        matches = []
+        def replace(m):
+            matches.append(m.group())
+            return ga_to_en[i]
+
+        regex = '(?<!")' + i + '(?!")'
+        script = re.sub(regex, replace, script)
+
+    f = open('translated-input.c', 'w')
+    f.write(script)
+    f.close()
+
+    os.system('gcc translated-input.c -o ' + outputfile)
+    os.system('rm -f translated-input.c')
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

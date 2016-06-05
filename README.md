@@ -46,5 +46,5 @@ príomh()
 
 ```bash
 $ ./gaelcc -i samplaí/dia_duit_an_domhain.gc -o triail; ./triail
-$ ./gaelcc -i samplaí/uimhir-phríomha.gc -o triail; ./triail
+$ ./gaelcc -i samplaí/uimhir_phríomha.gc -o triail; ./triail
 ```

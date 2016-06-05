@@ -8,7 +8,7 @@ C as Gaeilge
 
 príomh()
 {
-        cuir_i_gcló("Dia duit an domhain\n");
+        cuir_i_gcló("Dia duit an Domhain\n");
         cuir_ar_ais 0;
 }
 ```

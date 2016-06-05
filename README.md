@@ -1,8 +1,8 @@
 # gaelcód
 C as Gaeilge
 
-Mar shampla:
-
+## Samplaí
+### Dia duit an Domhain
 ```
 #iniaigh <caighdeán_ionchur_aschur.h>
 
@@ -13,6 +13,7 @@ príomh()
 }
 ```
 
+### Uimhreacha Príomha
 ```
 #iniaigh <caighdeán_ionchur_aschur.h>
 
@@ -44,5 +45,6 @@ príomh()
 ## Úsáid:
 
 ```bash
-$ ./gaelcc -i samplaí/dia_duit_an_domhain.c -o triail; ./triail
+$ ./gaelcc -i samplaí/dia_duit_an_domhain.gc -o triail; ./triail
+$ ./gaelcc -i samplaí/uimhir-phríomha.gc -o triail; ./triail
 ```

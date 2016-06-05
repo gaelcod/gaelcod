@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import getopt, os, re, sys
+import csv, getopt, os, re, sys, unicodedata
 
 def main(argv):
     inputfile = ''
@@ -8,27 +8,26 @@ def main(argv):
     try:
        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
     except getopt.GetoptError:
-       print('translate.py -i <inputfile> -o <outputfile>')
+       print('gaelcc -i <inputfile> -o <outputfile>')
        sys.exit(2)
     for opt, arg in opts:
        if opt == '-h':
-          print('translate.py -i <inputfile> -o <outputfile>')
+          print('gaelcc -i <inputfile> -o <outputfile>')
           sys.exit()
        elif opt in ("-i", "--ifile"):
           inputfile = arg
        elif opt in ("-o", "--ofile"):
           outputfile = arg
 
+    # Input .gc script:
     with open(inputfile, 'r') as inputfile:
         script = inputfile.read()
 
-    ga_to_en = dict({
-        'cuir_i_gcló': 'printf',
-        'príomh': 'main',
-        'iniaigh': 'include',
-        'gnáth-ionchur-aschur.h': 'stdio.h'
-    })
+    # Dictionary file:
+    with open('dictionary.csv', 'r') as f:
+         ga_to_en = dict(filter(None, csv.reader(f)))
 
+    # For every Irish keyword/term, translate to English (original C):
     for i in ga_to_en:
         matches = []
         def replace(m):
@@ -38,10 +37,12 @@ def main(argv):
         regex = '(?<!")' + i + '(?!")'
         script = re.sub(regex, replace, script)
 
+    # Write translated version to a file:
     f = open('translated-input.c', 'w')
     f.write(script)
     f.close()
 
+    # Compile and remove the intermediary translated file:
     os.system('gcc translated-input.c -o ' + outputfile)
     os.system('rm -f translated-input.c')
 

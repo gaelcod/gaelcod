@@ -1,0 +1,7 @@
+#iniaigh <caighdeán_ionchur_aschur.h>
+
+príomh()
+{
+        cuir_i_gcló("Dia duit an domhain\n");
+        cuir_air_ais 0;
+}

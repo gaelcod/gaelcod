@@ -1,0 +1,41 @@
+cuir_i_gcló,printf
+scan,scanf
+uath,auto
+bris,break
+cás,case
+carachtar,char
+tairiseach,const
+lean,continue
+réamhshocrú,default
+déan,do
+dúbailte,double
+eile,else
+cineál_scálach_áirithe,enum
+iniaigh,include
+príomh,main
+caighdeán_ionchur_aschur.h,stdio.h
+seachtrach,extern
+snámhphointe,float
+do,for
+dul_go,goto
+má,if
+slánuimhir,int
+fada,long
+tabhall,register
+cuir_ar_ais,return
+gearr,short
+slánuimhir le_sín,signed int
+slánuimhir fhada le_sín,signed long int
+sínuimhir,signed
+méid,sizeof
+statach,static
+struchtúr,struct
+lasc,switch
+sainiú_cineál,typedef
+aontas,union
+slánuimhir gan_sín,unsigned int
+slánuimhir fhada gan_sín,unsigned long int
+folúntas,void
+luaineach,volatile
+nuair,while
+eagar,array

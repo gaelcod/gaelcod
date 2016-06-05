@@ -3,7 +3,7 @@ C as Gaeilge
 
 ## Samplaí
 ### Dia duit an Domhain
-```
+```conf
 #iniaigh <caighdeán_ionchur_aschur.h>
 
 príomh()
@@ -14,7 +14,7 @@ príomh()
 ```
 
 ### Uimhreacha Príomha
-```
+```conf
 #iniaigh <caighdeán_ionchur_aschur.h>
 
 príomh()

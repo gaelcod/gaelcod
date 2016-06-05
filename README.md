@@ -9,7 +9,7 @@ C as Gaeilge
 príomh()
 {
         cuir_i_gcló("Dia duit an domhain\n");
-        cuir_air_ais 0;
+        cuir_ar_ais 0;
 }
 ```
 
@@ -42,7 +42,7 @@ príomh()
 }
 ```
 
-## Úsáid:
+## Úsáid
 
 ```bash
 $ ./gaelcc -i samplaí/dia_duit_an_domhain.gc -o triail; ./triail

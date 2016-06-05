@@ -24,16 +24,18 @@ def main(argv):
         script = inputfile.read()
 
     # Dictionary file:
-    with open('dictionary.csv', 'r') as f:
+    with open('foclóir.csv', 'r') as f:
          ga_to_en = dict(filter(None, csv.reader(f)))
+    del ga_to_en['Gaeilge']  # delete header
 
-    # For every Irish keyword/term, translate to English (original C):
+    # For every Irish term, translate to English (original C), except when
+    # the word is contained within quotes:
+    def replace(m):
+        matches.append(m.group())
+        return ga_to_en[i]
+
     for i in ga_to_en:
         matches = []
-        def replace(m):
-            matches.append(m.group())
-            return ga_to_en[i]
-
         regex = '(?<!")' + i + '(?!")'
         script = re.sub(regex, replace, script)
 

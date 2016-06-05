@@ -21,7 +21,7 @@ príomh()
 {
         slánuimhir n, c;
 
-        cuir_i_gcló("Iontráil uimhir\n");
+        cuir_i_gcló("Iontráil uimhir agus brúigh aisfhill:\n");
         scan("%d", &n);
 
         má (n == 2) {
